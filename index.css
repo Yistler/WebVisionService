@@ -1,3 +1,16 @@
+ .u-logo-content{
+  display: flex;
+  align-items: center;
+ }
+ .u-logo-image{
+  max-height: 40px;
+  margin-right: 10px;
+ }
+ .u-logo-text{
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+ }
  .u-section-1 {
   background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/pexels-photo-2422293.jpeg');
   background-position: 50% 50%;
@@ -948,7 +961,7 @@
 .u-section-5 .u-image-1 {
   width: 240px;
   height: 240px;
-  background-image: url("images/2.jpg");
+  background-image: url("images/nicolas-img.png");
   background-position: 50% 50%;
   margin: 0 auto;
 }
@@ -1008,7 +1021,7 @@
 .u-section-5 .u-image-2 {
   width: 240px;
   height: 240px;
-  background-image: url("images/0b32e1fa-df03-3333-0282-3c4069b3e47d.jpg");
+  background-image: url("images/Yistler-img.png");
   background-position: 50% 50%;
   margin: 0 auto;
 }
@@ -1068,7 +1081,7 @@
 .u-section-5 .u-image-3 {
   width: 240px;
   height: 240px;
-  background-image: url("images/3.jpg");
+  background-image: url("images/luis-img.png");
   background-position: 50% 50%;
   margin: 0 auto;
 }
