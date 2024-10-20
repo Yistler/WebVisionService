@@ -1,3 +1,123 @@
+.u-logo-content{
+  display: flex;
+  align-items: center;
+ }
+ .u-logo-image{
+  max-height: 40px;
+  margin-right: 10px;
+ }
+ .u-logo-text{
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+ }
+ .u-section-1 {
+  background-image: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/pexels-photo-2422293.jpeg');
+  background-position: 50% 50%;
+}
+.u-text-contacto{
+  color: white;
+  text-align:center;
+
+}
+.u-section-1 fieldset{
+  color: white;
+}
 .u-section-1 .u-sheet-1 {
-  min-height: 400px;
+    min-height: 400px;
+}
+
+
+
+
+.u-section-1 {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/pexels-photo-2422293.jpeg');
+  background-position: 50% 50%;
+  animation: slideIn 0.8s ease-out forwards; /* Añadir la animación al formulario */
+}
+
+/* Desplazamiento suave de los campos del formulario */
+fieldset {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1); /* Fondo semi-transparente para mejor visibilidad */
+  border: none;
+  margin: 20px 0;
+  transform: translateY(20px); /* Aparece con un pequeño desplazamiento */
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards; /* Animación para los campos */
+  animation-delay: 0.2s; /* Retardo en la animación para que los campos aparezcan secuencialmente */
+}
+
+/* Animación de aparición de los campos */
+@keyframes fadeInUp {
+  0% {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Animación en los campos de entrada cuando se enfocan */
+input[type="text"], input[type="email"], textarea {
+  padding: 16px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #2c3e50;
+}
+
+input:required:invalid:focus + .error-message,
+textarea:required:invalid:focus + .error-message {
+  display: block;
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+  border-color: #478ac9;
+  box-shadow: 0 0 8px rgba(71, 138, 201, 0.5);
+}
+
+/* Animación de botón de envío */
+input[type="submit"] {
+  padding: 12px 20px;
+  background-color: #478ac9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #3678b6; /* Efecto hover en el botón */
+  transform: scale(1.05); /* Efecto de aumento en el botón */
+}
+
+input[type="submit"]:active {
+  transform: scale(1); /* Resetea al tamaño original al hacer clic */
+}
+
+/* Animación de aparición en los campos de selección y texto */
+textarea {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #478ac9;
+  box-shadow: 0 0 8px rgba(71, 138, 201, 0.5);
 }
