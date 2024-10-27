@@ -2323,4 +2323,15 @@
   .u-section-10 .u-layout-cell-2 {
     min-height: 100px;
   }
+
+
+  .u-section-10 .u-text u-text-grey-25 u-text-4 {
+    font-size: 1.25rem;
+    width: 320px;
+    margin: 20px auto 0;
+  }
+
+
 }
+
+
