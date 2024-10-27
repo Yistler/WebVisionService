@@ -15,6 +15,9 @@
     <link id="u-theme-google-font" rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+       
 
 
     <script type="application/ld+json">{
@@ -32,12 +35,12 @@
 <body data-path-to-root="./" data-include-products="true" class="u-body u-xl-mode" data-lang="es">
     <header class="u-clearfix u-header u-header" id="sec-e2ea">
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-            
+
             <a href="#" class="u-image u-logo u-image-1">
                 <div class="u-logo-content">
-                    <img src="images/desarrollo-de-aplicaciones.png" class="u-logo-image u-logo-image-1"/>
+                    <img src="images/desarrollo-de-aplicaciones.png" class="u-logo-image u-logo-image-1" />
                     <span class="u-logo-text">VisionWebService</span>
-                  </div>
+                </div>
             </a>
             <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
                 <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
@@ -60,11 +63,7 @@
                     <ul class="u-nav u-unstyled u-nav-1">
                         <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                                href="./index.html" style="padding: 10px 20px;">Casa</a>
-                        </li>
-                        <li class="u-nav-item"><a
-                                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-                                href="Acerca-de.html" style="padding: 10px 20px;">Acerca de</a>
+                                href="./index.html" style="padding: 10px 20px;">Inicio</a>
                         </li>
                         <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
@@ -78,9 +77,6 @@
                             <div class="u-menu-close"></div>
                             <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link" href="./">Casa</a>
-                                </li>
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Acerca-de.html">Acerca
-                                        de</a>
                                 </li>
                                 <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                         href="Contacto.html">Contacto</a>
@@ -96,65 +92,172 @@
 
     <section class="u-clearfix u-section-1" id="sec-9250">
         <div class="u-clearfix u-sheet u-sheet-1">
-            <h2 class="u-text-contacto">Juntos haremos crecer tu negocio</h2>
-            <form action="" method="POST">
-                <!--Campos ocultos de Mailchimp-->
-                <input type="hidden" name="u" value="MAILCHIMP_U_VALUE">
-                <input type="hidden" name="id" value="MAILCHIMP_LIST_ID">
 
-                <fieldset>
-                    <legend>Datos de contacto</legend>
-                    <input type="text" name="nombre" placeholder="Nombre" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                </fieldset>
+            <div id="mc_embed_shell">
+                <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+                    #mc_embed_signup {
+                        background: transparent;
+                        color: white;
+                        clear: left;
+                        font: 16px Helvetica, Arial, sans-serif;
+                        width: 600px;
+                    }
 
-                <fieldset>
-                    <legend>¿Cuentanos sobre ti?</legend>
+                    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+                     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                </style>
+                <section>
+                    <div>
+                        <div id="mc_embed_signup" class="u-content-form">
+                            <form action="https://webvisionservice.com/mailchimp-test/server.php" method="post" id="myForm" class="validate">
+                                <div>
+                                    <h2 class="u-text-contacto">Juntos haremos crecer tu negocio</h2>
+                                    <div class="mc-field-group">
+                                        <label for="mce-EMAIL">Dirección de correo electrónico
+                                            <span class="asterisk">*</span>
+                                        </label>
+                                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL"
+                                            required="" value="">
+                                    </div>
+                                    <div class="mc-field-group">
+                                        <label for="mce-FNAME">Nombre </label>
+                                        <input type="text" name="FNAME" class=" text" id="mce-FNAME" value="">
+                                    </div>
+                                    <div class="mc-field-group input-group">
+                                        <strong>Me interesa cotizar </strong>
+                                        <ul>
+                                            <li>
+                                                <input type="radio" name="MMERGE7" id="mce-MMERGE70"
+                                                    value="Desarrollo Web">
+                                                <label for="mce-MMERGE70">Desarrollo Web</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="MMERGE7" id="mce-MMERGE71"
+                                                    value="Posicionamiento Google My Business">
+                                                <label for="mce-MMERGE71">Posicionamiento Google My Business</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="MMERGE7" id="mce-MMERGE72"
+                                                    value="Meketin Digital">
+                                                <label for="mce-MMERGE72">Meketin Digital</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="MMERGE7" id="mce-MMERGE73" value="Otro">
+                                                <label for="mce-MMERGE73">Otro</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="mc-field-group">
+                                        <label for="mce-MMERGE8">Comentario adicional </label>
+                                        <input type="text" name="MMERGE8" class=" text" id="mce-MMERGE8" value="">
+                                    </div>
+                                    <div class="mc-field-group input-group">
+                                        <strong>Cuéntanos sobre ti </strong>
+                                        <ul>
+                                            <li>
+                                                <input type="radio" name="MMERGE9" id="mce-MMERGE90"
+                                                    value="Trabajo para una empresa">
+                                                <label for="mce-MMERGE90">Trabajo para una empresa</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="MMERGE9" id="mce-MMERGE91"
+                                                    value="Tengo mi propia empresa">
+                                                <label for="mce-MMERGE91">Tengo mi propia empresa</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="MMERGE9" id="mce-MMERGE92"
+                                                    value="Estoy emprendiendo"><label for="mce-MMERGE92">Estoy
+                                                    emprendiendo</label>
+                                            </li>
+                                            <li><input type="radio" name="MMERGE9" id="mce-MMERGE93" value="Otro"><label
+                                                    for="mce-MMERGE93">Otro</label></li>
+                                        </ul>
+                                    </div>
+                                    <div id="mce-responses" class="clear foot">
+                                        <div class="response" id="mce-error-response" style="display: none;"></div>
+                                        <div class="response" id="mce-success-response" style="display: none;"></div>
+                                    </div>
+                                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                        /* real people should not fill this in and expect good things - do not remove
+                                        this or risk form bot signups */
+                                        <input type="text" name="b_0d37eec57011d85e0aa3fa93a_d18d8f06ae" tabindex="-1"
+                                            value="">
+                                    </div>
+                                    <div class="optionalParent">
+                                        <div class="clear foot">
+                                            <input type="submit" name="subscribe" id="mc-embedded-subscribe"
+                                                class="button1" value="Enviar">
 
-                    <input type="radio" id="empresa" name="ocupacion" value="Trabajo para una empresa" required/>
-                    <label for="empresa">Trabajo para una empresa</label><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <script>
+                                document.getElementById('myForm').addEventListener('submit', async (event) => {
+                                    event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+                                    const formData = new FormData(event.target);
+                                    const data = Object.fromEntries(formData);
 
-                    <input type="radio" id="propia_empresa" name="ocupacion" value="Tengo mi propia empresa" required>
-                    <label for="propia_empresa">Tengo mi propia empresa</label><br>
+                                    const response = await fetch('http://localhost:3000/submit-form', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                        },
+                                        body: JSON.stringify(data),
+                                    });
 
-                    <input type="radio" id="emprendiendo" name="ocupacion" value="Estoy emprendiendo" required>
-                    <label for="emprendiendo">Estoy emprendiendo</label><br>
+                                    const result = await response.text();
+                                    
+                                    //Modal
+                                    if(response.ok){
+                                        $('#successModal').modal('show');
+                                    }else{
+                                        alert(result);
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </section>
 
-                    <input type="radio" id="ninguna" name="ocupacion" value="Ninguna" required>
-                    <label for="ninguna">Ninguna de las anteriores</label>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Me interesa cotizar</legend>
-
-                    <input type="radio" id="desarrollo_web" name="cotizar" value="Desarrollo web" required>
-                    <label for="desarrollo_web">Desarrollo Web</label><br>
-
-                    <input type="radio" id="google_business" name="cotizar" value="Posicionamiento con Google My Business" required>
-                    <label for="google_business">Posicionamiento con Google My Business</label><br>
-
-                    <input type="radio" id="marketin_digiral" name="cotizar" value="Marketin Digital" required>
-                    <label for="marketin_digiral">Marketin Digital</label><br>
-
-                    <input type="radio" id="otro" name="cotizar" value="Otro" required>
-                    <label for="otro">Otro</label><br>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Comentario adicional</legend>
-                    <textarea name="comentario" id="comentario" rows="5" cols="30" maxlength="500" ></textarea>
-                </fieldset>
-                
-                <div class="u-align-left u-form-group u-form-submit">
-                    <input class="u-active-grey-70 u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-dark-3 u-palette-3-base u-radius-50 u-btn-1" 
-                    type="submit" value="ENVIAR">
+                <!-- Modal -->
+                <div class="modal fade" id="successModal" tabindex="-1" role="dialog"
+                    aria-labelledby="successModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="successModalLabel">Éxito</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Solicitud enviada con éxito. Nos pondremos en contacto contigo pronto.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </form>
+
+
+
+                <script type="text/javascript"
+                    src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+                <script
+                    type="text/javascript">(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[7] = 'MMERGE7'; ftypes[7] = 'radio'; fnames[8] = 'MMERGE8'; ftypes[8] = 'text'; fnames[9] = 'MMERGE9'; ftypes[9] = 'radio'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; fnames[6] = 'COMPANY'; ftypes[6] = 'text'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+            
+                </div>
+
+
+
         </div>
     </section>
 
 
-    
+
 
 
 
@@ -172,6 +275,8 @@
             </a>
         </p>
     </section>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
