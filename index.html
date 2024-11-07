@@ -21,9 +21,11 @@
   <link id="u-page-google-font" rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i">
 
-   
 
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        
 
 
 
@@ -123,42 +125,69 @@
               class="u-align-left u-container-align-left u-container-style u-layout-cell u-size-25-lg u-size-25-xl u-size-30-md u-size-30-sm u-size-30-xs u-layout-cell-2"
               data-animation-name="zoomIn" data-animation-duration="1750" data-animation-direction="">
               <div class="u-container-layout u-valign-bottom-lg u-valign-bottom-xl u-container-layout-2">
-                <h3 class="u-custom-font u-font-merriweather u-text u-text-body-alt-color u-text-default u-text-2">Contactanos </h3>
+                <h3 class="u-custom-font u-font-merriweather u-text u-text-body-alt-color u-text-default u-text-2">
+                  Contactanos </h3>
                 <p class="u-text u-text-body-alt-color u-text-default u-text-3"> Ponte en contacto y descubre cómo
                   podemos ayudarte.</p>
                 <div
                   class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-form u-radius-30 u-white u-form-1">
-                  <form action="https://forms.nicepagesrv.com/v2/form/process"
+
+
+
+                  <form action="https://webvisionservice.com/mailchimp-test/server.php" method="post" id="myForm"
                     class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form"
                     style="padding: 15px;">
                     <div class="u-form-group u-form-name">
                       <label for="name-2137" class="u-form-control-hidden u-label"></label>
-                      <input type="text" placeholder="Enter your Name" id="name-2137" name="name"
+                      <input type="text" placeholder="Ingrese su nombre" id="name-2137" name="FNAME"
                         class="u-grey-5 u-input u-input-rectangle u-radius-20" required="">
                     </div>
                     <div class="u-form-email u-form-group">
                       <label for="email-2137" class="u-form-control-hidden u-label"></label>
-                      <input type="email" placeholder="Enter a valid email address" id="email-2137" name="email"
+                      <input type="email" placeholder="Ingrese un email valido" id="email-2137" name="EMAIL"
                         class="u-grey-5 u-input u-input-rectangle u-radius-20" required="">
                     </div>
-                    <div class="u-align-left u-form-group u-form-submit">
-                      <a href="#"
-                        class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-palette-3-base u-radius-20 u-btn-1">Entregar</a>
-                      <input type="submit" value="submit" class="u-form-control-hidden">
+                    <div class="clear foot">
+                      <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button1" value="Enviar">
+
                     </div>
-                    <div class="u-form-send-message u-form-send-success"> "¡Gracias! Tu mensaje ha sido enviado."</div>
-                    <div class="u-form-send-error u-form-send-message"> "Imposible enviar tu mensaje. Por favor, corrige los errores." </div>
-                    <input type="hidden" value="" name="recaptchaResponse">
-                    <input type="hidden" name="formServices" value="50ad2a48-8904-6175-3d28-dbcb75a14ff1">
-                  </form>
                 </div>
+
+                </form>
+
+                <script>
+                  document.getElementById('myForm').addEventListener('submit', async (event) => {
+                      event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+                      const formData = new FormData(event.target);
+                      const data = Object.fromEntries(formData);
+
+                      const response = await fetch('https://webvisionservice.com/mailchimp-test/server.php', {
+                          method: 'POST',
+                          body: new URLSearchParams(data),
+                      });
+
+                      const result = await response.text();
+                      
+                      //Modal
+                      if(response.ok){
+                          $('#successModal').modal('show');
+                      }else{
+                          alert(result);
+                      }
+                  });
+              </script>
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </div>
   </section>
+
+
+
   <section class="u-align-center u-clearfix u-container-align-center u-grey-5 u-section-2" id="carousel_f74d">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-expanded-width u-list u-list-1">
@@ -184,7 +213,7 @@
               </h5>
               <p class="u-text u-text-grey-40 u-text-2">Diseño y desarrollo de sitios web a medida, optimizados para una
                 experiencia de usuario fluida y adaptados a las necesidades de tu negocio.</p>
-             
+
             </div>
           </div>
           <div
@@ -208,7 +237,7 @@
               </h5>
               <p class="u-text u-text-grey-40 u-text-2">Optimización de tu perfil en Google My Business para aumentar la
                 visibilidad local y atraer más clientes potenciales.</p>
-             
+
             </div>
           </div>
           <div
@@ -230,11 +259,12 @@
               <h5 class="u-custom-font u-font-merriweather u-text u-text-5">Marketing <span
                   style="font-style:futura;">Digital</span>
               </h5>
-              <p class="u-text u-text-grey-40 u-text-2">Estrategias personalizadas para aumentar tu visibilidad en línea,&nbsp; conectar con tu audiencia y impulsar el crecimiento de tu negocio.
+              <p class="u-text u-text-grey-40 u-text-2">Estrategias personalizadas para aumentar tu visibilidad en
+                línea,&nbsp; conectar con tu audiencia y impulsar el crecimiento de tu negocio.
             </div>
           </div>
 
-        
+
 
         </div>
       </div>
@@ -348,7 +378,7 @@
               <p class="u-text u-text-grey-50 u-text-4">Compromiso con la excelencia en cada proyecto, ofreciendo
                 resultados consistentes, atención detallada y soluciones que superan las expectativas, siempre con un
                 enfoque profesional y confiable.</p>
-              
+
             </div>
           </div>
           <div
@@ -384,7 +414,7 @@
               <p class="u-text u-text-grey-50 u-text-13">Ofrecemos tarifas competitivas porque tratás directamente con
                 los cofundadores, eliminando intermediarios y asegurando una atención personalizada y ajustada a tu
                 presupuesto.</p>
-              
+
             </div>
           </div>
           <div
@@ -395,7 +425,7 @@
               <p class="u-text u-text-grey-50 u-text-16">Desarrollamos ideas y soluciones pioneras que transforman tu
                 negocio, incorporando las últimas tecnologías y enfoques creativos para mantenerte siempre un paso
                 adelante.</p>
-             
+
             </div>
           </div>
         </div>
@@ -417,7 +447,9 @@
               <div alt="" class="u-image u-image-circle u-image-1" data-image-width="598" data-image-height="598"></div>
               <h3 class="u-align-center u-custom-font u-font-merriweather u-text u-text-3">Nicolas Malebran</h3>
               <p class="u-align-center u-text u-text-palette-3-base u-text-4">Co-Founder & CEO (Director Ejecutivo)</p>
-              <p class="u-align-center u-text u-text-5">Como Co-Fundador y Director Ejecutivo, lidero la visión y el crecimiento de la empresa, impulsando la innovación y asegurando soluciones que marquen la diferencia para nuestros clientes.</p>
+              <p class="u-align-center u-text u-text-5">Como Co-Fundador y Director Ejecutivo, lidero la visión y el
+                crecimiento de la empresa, impulsando la innovación y asegurando soluciones que marquen la diferencia
+                para nuestros clientes.</p>
               <div class="u-social-icons u-spacing-10 u-social-icons-1">
                 <a class="u-social-url" target="_blank" href=""><span
                     class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-palette-3-base u-icon-1"><svg
@@ -465,7 +497,9 @@
               <div alt="" class="u-image u-image-circle u-image-2"></div>
               <h3 class="u-align-center u-custom-font u-font-merriweather u-text u-text-6">Yistler Duran</h3>
               <p class="u-align-center u-text u-text-palette-3-base u-text-7">Co-Founder & Director of TI</p>
-              <p class="u-align-center u-text u-text-8">Como Co-Fundador y Director de TI, mi objetivo es integrar tecnología y estrategia para ofrecer soluciones efectivas que superen las expectativas de nuestros clientes y optimicen su rendimiento.</p>
+              <p class="u-align-center u-text u-text-8">Como Co-Fundador y Director de TI, mi objetivo es integrar
+                tecnología y estrategia para ofrecer soluciones efectivas que superen las expectativas de nuestros
+                clientes y optimicen su rendimiento.</p>
               <div class="u-social-icons u-spacing-10 u-social-icons-2">
                 <a class="u-social-url" target="_blank" href=""><span
                     class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-palette-3-base u-icon-4"><svg
@@ -512,7 +546,9 @@
               <div alt="" class="u-image u-image-circle u-image-3"></div>
               <h3 class="u-align-center u-custom-font u-font-merriweather u-text u-text-9">Luis Berrios</h3>
               <p class="u-align-center u-text u-text-palette-3-base u-text-10">Co-Founder & Developer Relations</p>
-              <p class="u-align-center u-text u-text-11">Como Co-Fundador y responsable de Relaciones con Desarrolladores, me enfoco en crear conexiones sólidas y fomentar la colaboración para asegurar que nuestras soluciones satisfagan las necesidades de la comunidad..</p>
+              <p class="u-align-center u-text u-text-11">Como Co-Fundador y responsable de Relaciones con
+                Desarrolladores, me enfoco en crear conexiones sólidas y fomentar la colaboración para asegurar que
+                nuestras soluciones satisfagan las necesidades de la comunidad..</p>
               <div class="u-social-icons u-spacing-10 u-social-icons-3">
                 <a class="u-social-url" target="_blank" href=""><span
                     class="u-icon u-icon-circle u-social-facebook u-social-icon u-text-palette-3-base u-icon-7"><svg
@@ -555,15 +591,14 @@
           </div>
         </div>
       </div>
-      <p class=><a
-          href="https://www.freepik.com/photos/business"
+      <p class=><a href="https://www.freepik.com/photos/business"
           class="u-border-1 u-border-black-75 u-btn u-btn-1 u-button-style u-none u-text-body-color"></a>
       </p>
     </div>
   </section>
   <section class="u-align-center u-clearfix u-container-align-center u-valign-middle u-section-6" id="carousel_9d7c">
-    <h2 class="u-custom-font u-font-merriweather u-text u-text-1"> Proyectos<span
-        style="font-style: futura;"> Para su negocio</span>
+    <h2 class="u-custom-font u-font-merriweather u-text u-text-1"> Proyectos<span style="font-style: futura;"> Para su
+        negocio</span>
     </h2>
     <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
       <div class="u-gallery-inner u-gallery-inner-1">
@@ -586,8 +621,7 @@
         </div>
         <div class="u-effect-fade u-gallery-item">
           <div class="u-back-slide">
-            <img class="u-back-image u-expanded" src="images/pexels-ijonrobles-2388936.jpg"
-              alt="shopping bag">
+            <img class="u-back-image u-expanded" src="images/pexels-ijonrobles-2388936.jpg" alt="shopping bag">
           </div>
           <div class="u-over-slide u-shading u-valign-middle u-over-slide-3">
             <h3 class="u-gallery-heading" style="text-transform: uppercase;">Automatización de Marketing Digital</h3>
@@ -595,7 +629,8 @@
         </div>
         <div class="u-effect-fade u-gallery-item">
           <div class="u-back-slide">
-            <img class="u-back-image u-expanded" src="images/autumn-still-life-arrangement.jpg" alt="minimalistic design">
+            <img class="u-back-image u-expanded" src="images/autumn-still-life-arrangement.jpg"
+              alt="minimalistic design">
           </div>
           <div class="u-over-slide u-shading u-valign-middle u-over-slide-4">
             <h3 class="u-gallery-heading" style="text-transform: uppercase;">diseño minimalista</h3>
@@ -603,8 +638,7 @@
         </div>
         <div class="u-effect-fade u-gallery-item">
           <div class="u-back-slide">
-            <img class="u-back-image u-expanded" src="images/purse-1478852_1280.jpg"
-              alt="luxury black facade">
+            <img class="u-back-image u-expanded" src="images/purse-1478852_1280.jpg" alt="luxury black facade">
           </div>
           <div class="u-over-slide u-shading u-valign-middle u-over-slide-5">
             <h3 class="u-gallery-heading" style="text-transform: uppercase;">Optimización de conversiones</h3>
@@ -612,15 +646,16 @@
         </div>
         <div class="u-effect-fade u-gallery-item">
           <div class="u-back-slide">
-            <img class="u-back-image u-expanded" src="images/pexels-thisisengineering-3861958.jpg" alt="mockup with logo">
+            <img class="u-back-image u-expanded" src="images/pexels-thisisengineering-3861958.jpg"
+              alt="mockup with logo">
           </div>
           <div class="u-over-slide u-shading u-valign-middle u-over-slide-6">
-                     <h3 class="u-gallery-heading" style="text-transform: uppercase;">Tecnologias Actuales</h3>
+            <h3 class="u-gallery-heading" style="text-transform: uppercase;">Tecnologias Actuales</h3>
           </div>
         </div>
       </div>
     </div>
-    
+
   </section>
   <section class="u-clearfix u-section-7" id="carousel_54d9">
     <div class="u-clearfix u-sheet u-sheet-1">
@@ -632,10 +667,14 @@
                 <div
                   class="u-align-center-md u-align-center-sm u-align-center-xs u-container-style u-layout-cell u-shape-rectangle u-size-60 u-layout-cell-1">
                   <div class="u-container-layout u-container-layout-1">
-                    <h6 class="u-custom-font u-font-merriweather u-text u-text-1">La elegancia de nuestras soluciones despierta el apetito por la innovación <span
-                        style="font-style: italic;"></span>
+                    <h6 class="u-custom-font u-font-merriweather u-text u-text-1">La elegancia de nuestras soluciones
+                      despierta el apetito por la innovación <span style="font-style: italic;"></span>
                     </h6>
-                    <p class="u-text u-text-grey-40 u-text-2">Transformamos ideas en realidades sólidas. En cada paso, caminamos a tu lado, asegurando que cada decisión sea un avance firme hacia el cambio que necesitas. Nos movemos con agilidad, diseñando soluciones que no solo resuelven problemas, sino que te preparan para lo que viene. Porque no se trata solo de cumplir, se trata de llevar tu proyecto más allá de lo esperado</p>
+                    <p class="u-text u-text-grey-40 u-text-2">Transformamos ideas en realidades sólidas. En cada paso,
+                      caminamos a tu lado, asegurando que cada decisión sea un avance firme hacia el cambio que
+                      necesitas. Nos movemos con agilidad, diseñando soluciones que no solo resuelven problemas, sino
+                      que te preparan para lo que viene. Porque no se trata solo de cumplir, se trata de llevar tu
+                      proyecto más allá de lo esperado</p>
                     <a href="#"
                       class="u-border-none u-btn u-btn-round u-button-style u-palette-3-base u-radius-50 u-btn-1">Lee
                       mas</a>
@@ -643,14 +682,16 @@
                 </div>
               </div>
             </div>
-            <div class="u-size-30 u-size-60-md"> 
+            <div class="u-size-30 u-size-60-md">
               <div class="u-layout-col">
                 <div class="u-size-30">
                   <div class="u-layout-row">
                     <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                       <div class="u-container-layout u-container-layout-2">
                         <h4 class="u-text u-text-palette-3-base u-text-3">01</h4>
-                        <p class="u-text u-text-4"> Si bien no fuimos los primeros en desarrollo de software, somos una empresa sólida y confiable. Ofrecemos soluciones innovadoras y un proceso de colaboración en línea que facilita el trabajo con nuestros clientes.</p>
+                        <p class="u-text u-text-4"> Si bien no fuimos los primeros en desarrollo de software, somos una
+                          empresa sólida y confiable. Ofrecemos soluciones innovadoras y un proceso de colaboración en
+                          línea que facilita el trabajo con nuestros clientes.</p>
                       </div>
                     </div>
                     <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="720"
@@ -668,7 +709,9 @@
                     <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-5">
                       <div class="u-container-layout u-valign-middle u-container-layout-5">
                         <h4 class="u-text u-text-palette-3-base u-text-5">02</h4>
-                        <p class="u-text u-text-6">Como una empresa joven en Chile y México, nos esforzamos por crear soluciones que superen las expectativas de nuestros clientes. Estamos comprometidos con el crecimiento y la satisfacción del cliente, trabajando para alcanzar nuestros objetivos..</p>
+                        <p class="u-text u-text-6">Como una empresa joven en Chile y México, nos esforzamos por crear
+                          soluciones que superen las expectativas de nuestros clientes. Estamos comprometidos con el
+                          crecimiento y la satisfacción del cliente, trabajando para alcanzar nuestros objetivos..</p>
                       </div>
                     </div>
                   </div>
@@ -687,7 +730,8 @@
       <h1 class="u-custom-font u-font-merriweather u-text u-text-body-alt-color u-text-1"><span
           style="font-style: futura;">Tipos de Planes</span>
       </h1>
-      <p class="u-text u-text-body-alt-color u-text-2">Aquí tienes algunos tipos de planes que puedes ofrecer para diferentes rubros, adaptables a cualquier tipo de negocio</p>
+      <p class="u-text u-text-body-alt-color u-text-2">Aquí tienes algunos tipos de planes que puedes ofrecer para
+        diferentes rubros, adaptables a cualquier tipo de negocio</p>
       <div class="u-clearfix u-gutter-20 u-layout-wrap u-layout-wrap-1">
         <div class="u-gutter-0 u-layout">
           <div class="u-layout-row">
@@ -699,14 +743,14 @@
                 <h2 class="u-text u-text-default u-text-4"></h2>
                 <p class="u-text u-text-5">Por Mes</p>
                 <div class="u-border-2 u-border-black u-expanded-width u-line u-line-horizontal u-line-1"></div>
-                <p class="u-text u-text-6">usuarios&nbsp;<br>Función  <br>Función  <br>Función 
+                <p class="u-text u-text-6">usuarios&nbsp;<br>Función <br>Función <br>Función
                 </p>
                 <a href="#"
                   class="u-border-none u-btn u-btn-round u-button-style u-palette-3-base u-radius-50 u-text-body-color u-btn-1">obtener
                   un plan</a>
               </div>
             </div>
-            
+
             <div
               class="u-align-center u-container-align-center u-container-style u-layout-cell u-palette-3-base u-radius-20 u-shape-round u-size-20 u-layout-cell-3">
               <div
@@ -715,8 +759,8 @@
                 <h2 class="u-text u-text-body-alt-color u-text-default u-text-12"></h2>
                 <p class="u-text u-text-body-alt-color u-text-13">Por Mes</p>
                 <div class="u-border-2 u-border-white u-line u-line-horizontal u-line-3"></div>
-                <p class="u-text u-text-body-alt-color u-text-14"> usuarios&nbsp;<br>Función  <br>Función 
-                  <br>Función 
+                <p class="u-text u-text-body-alt-color u-text-14"> usuarios&nbsp;<br>Función <br>Función
+                  <br>Función
                 </p>
                 <a href="#"
                   class="u-btn u-btn-round u-button-style u-radius-50 u-text-body-color u-white u-btn-3">obtener un
@@ -731,7 +775,7 @@
                 <h2 class="u-text u-text-default u-text-16"></h2>
                 <p class="u-text u-text-17">Por Mes</p>
                 <div class="u-border-2 u-border-black u-expanded-width u-line u-line-horizontal u-line-4"></div>
-                <p class="u-text u-text-18"> usuarios&nbsp;<br>Función  <br>Función  <br>Función 
+                <p class="u-text u-text-18"> usuarios&nbsp;<br>Función <br>Función <br>Función
                 </p>
                 <a href="#"
                   class="u-border-none u-btn u-btn-round u-button-style u-palette-3-base u-radius-50 u-text-body-color u-btn-4">obtener
@@ -765,8 +809,9 @@
                   <span style="font-weight: 700;">Gonzalo Muñoz,</span>
                   <span style="font-style: italic;"> artista y diseñador chileno</span>
                 </h3>
-                <p class="u-text u-text-grey-40 u-text-2">La creatividad es el motor del cambio. Cada pequeño paso en el desarrollo de nuevas ideas nos acerca a un futuro mejor</p>
-                
+                <p class="u-text u-text-grey-40 u-text-2">La creatividad es el motor del cambio. Cada pequeño paso en el
+                  desarrollo de nuevas ideas nos acerca a un futuro mejor</p>
+
               </div>
             </div>
             <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
@@ -779,7 +824,7 @@
                   sus visitantes asegurándonos de que las personas tengan acceso a la información que ellos. Un concepto
                   de negocio es una declaración que describe el alcance y la razón de ser de un determinado
                   Idea de negocio.</p>
-                
+
               </div>
             </div>
           </div>
@@ -798,7 +843,8 @@
                 <h6 class="u-custom-font u-font-merriweather u-text u-text-1">Contactanos</h6>
                 <p class="u-text u-text-2" style="display: flex; align-items: center;">
                   <a href="https://wa.me/56982590081" target="_blank" style="margin-right: 10px;">
-              <img src="images/whatsapp.png" alt="WhatsApp" style="width: 30px; height: 30px; filter: invert(100%);">
+                    <img src="images/whatsapp.png" alt="WhatsApp"
+                      style="width: 30px; height: 30px; filter: invert(100%);">
                   </a>
                   +56 9 8259 0081
                 <h6 class="u-custom-font u-font-merriweather u-text u-text-3">correo</h6>
@@ -808,9 +854,9 @@
                 <ul class="u-custom-list u-text u-text-6">
                   <li>
                     <div class="clase u-list-icon">
-                  <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                         xml:space="preservar" class="u-svg-content"></div>
-                  </div>Lo Encalada 106, Nuñoa, Chile.
+                    </div>Lo Encalada 106, Nuñoa, Chile.
                   </li>
                   <li>
                     <div class="clase u-list-icon">
@@ -827,7 +873,8 @@
                 </ul>
               </div>
             </div>
-            <div class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-40 u-layout-cell-2">
+            <div
+              class="u-align-left u-container-align-left u-container-style u-layout-cell u-right-cell u-size-40 u-layout-cell-2">
               <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-xl u-container-layout-2">
                 <div class="u-expanded-width-sm u-expanded-width-xs u-form u-form-1">
                   <form action="https://forms.nicepagesrv.com/v2/form/process"
@@ -864,9 +911,10 @@
                       <label class="u-label"></label>
                       <input type="checkbox" id="agree-2c2f" name="agree" class="u-agree-checkbox u-field-input"
                         required="">
-                      <label for="agree-2c2f" class="u-block-001e-47 u-field-label" style="color: #f0e3e3; font-size: 14px; font-weight: bold;">
+                      <label for="agree-2c2f" class="u-block-001e-47 u-field-label"
+                        style="color: #f0e3e3; font-size: 14px; font-weight: bold;">
                         Acepto los términos y condiciones
-                    
+
                     </div>
                     <div class="u-align-left u-form-group u-form-submit">
                       <a href="#"
@@ -874,41 +922,43 @@
                       <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
                     <div class="u-form-send-message u-form-send-success"> ¡Gracias! Tu mensaje ha sido enviado. </div>
-                    <div class="u-form-send-error u-form-send-message">No se pudo enviar tu mensaje. Por favor, corrige los errores y vuelve a intentarlo. </div>
+                    <div class="u-form-send-error u-form-send-message">No se pudo enviar tu mensaje. Por favor, corrige
+                      los errores y vuelve a intentarlo. </div>
                     <input type="hidden" value="" name="recaptchaResponse">
                     <input type="hidden" name="formServices" value="50ad2a48-8904-6175-3d28-dbcb75a14ff1">
                   </form>
                 </div>
-                
-                
+
+
               </div>
-              
+
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
-<footer style="background-color: #333; color: rgb(163, 155, 155); text-align: center; padding:8px;">
+
+  <footer style="background-color: #333; color: rgb(163, 155, 155); text-align: center; padding:8px;">
     <div>
-        <h4>Síguenos en nuestras redes sociales</h4>
-        <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px;">
-            <img src="images/facebook.png" alt="Facebook" style="width: 30px; height: 30px; filter: invert(100%);">
+      <h4>Síguenos en nuestras redes sociales</h4>
+      <a href="https://www.facebook.com" target="_blank" style="margin: 0 10px;">
+        <img src="images/facebook.png" alt="Facebook" style="width: 30px; height: 30px; filter: invert(100%);">
+      </a>
+      <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px;">
+        <img src="images/twitter-alt-circle.png" alt="Twitter" style="width: 30px; height: 30px; filter: invert(100%);">
+
+        <a href="https://www.instagram.com/webvisionservice/" target="_blank" style="margin: 0 10px;">
+          <img src="images/instagram .png" alt="Instagram" style="width: 30px; height: 30px; filter: invert(100%);">
         </a>
-        <a href="https://www.twitter.com" target="_blank" style="margin: 0 10px;">
-            <img src="images/twitter-alt-circle.png" alt="Twitter" style="width: 30px; height: 30px; filter: invert(100%);">
-        
-            <a href="https://www.instagram.com/webvisionservice/" target="_blank" style="margin: 0 10px;">
-            <img src="images/instagram .png" alt="Instagram" style="width: 30px; height: 30px; filter: invert(100%);">
-        </a>
-       
-        </a>
-        <a href="https://wa.me/" target="_blank" style="margin: 0 10px;">
-          <img src="images/whatsapp.png" alt="WhatsApp"style="width: 30px; height: 30px; filter: invert(100%);">
+
+      </a>
+      <a href="https://wa.me/" target="_blank" style="margin: 0 10px;">
+        <img src="images/whatsapp.png" alt="WhatsApp" style="width: 30px; height: 30px; filter: invert(100%);">
       </a>
     </div>
 
     <p>&copy; 2024 Todos los derechos reservados.</p>
-</footer>
+  </footer>
   <section class="u-backlink u-clearfix u-grey-80">
     <p class="u-text">
       <span>Este sitio fue creado en </span>
@@ -917,6 +967,9 @@
       </a>
     </p>
   </section>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 </body>
 
